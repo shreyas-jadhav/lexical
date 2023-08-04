@@ -297,7 +297,7 @@ function useDraggableBlockMenu(
       scrollerElem?.removeEventListener('mousemove', onMouseMove);
       scrollerElem?.removeEventListener('mouseleave', onMouseLeave);
     };
-  }, [scrollerElem, anchorElem, editor]);
+  }, [scrollerElem, anchorElem, editor, draggableBlockElem]);
 
   useEffect(() => {
     if (menuRef.current) {
