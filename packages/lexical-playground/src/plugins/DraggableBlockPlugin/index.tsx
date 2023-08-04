@@ -280,7 +280,10 @@ function useDraggableBlockMenu(
 
       const _draggableBlockElem = getBlockElement(anchorElem, editor, event);
 
-      setDraggableBlockElem(_draggableBlockElem);
+      // don't set if its already the same node... otherwise it will do unnecesarry re-renders
+      if (!_draggableBlockElem?.isSameNode(draggableBlockElem)) {
+        setDraggableBlockElem(_draggableBlockElem);
+      }
     }
 
     function onMouseLeave() {
